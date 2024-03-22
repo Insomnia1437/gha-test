@@ -14,7 +14,7 @@ jobs:
   #     run: |
   #       cat /etc/os-release
   multi-os:
-    runs-on: [ubuntu-latest, macos-latest, ubuntu-20.04]
+    runs-on: [ubuntu-latest, macos-latest]
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python 3.9
