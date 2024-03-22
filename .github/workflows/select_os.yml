@@ -1,0 +1,15 @@
+on:
+  workflow_dispatch:
+    inputs:
+      chosen-os:
+        required: true
+        type: choice
+        options:
+        - ubuntu-latest
+        - ubuntu-20.04
+
+jobs:
+  test:
+    runs-on: "${{ inputs.chosen-os }}"
+    steps:
+    - run: echo Hello world!

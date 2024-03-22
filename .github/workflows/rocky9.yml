@@ -1,0 +1,16 @@
+name: Rocky 9
+
+# Trigger the workflow on push or pull request
+on: workflow_dispatch
+
+jobs:
+  distribution-check:
+    runs-on: ubuntu-latest
+    container:
+      image: rockylinux/rockylinux:9
+    steps:
+    - uses: actions/checkout@v4
+    - name: Are we really on Rocky Linux?
+      run: |
+        cat /etc/os-release
+
