@@ -13,3 +13,17 @@ jobs:
     - name: Are we really on Rocky Linux?
       run: |
         cat /etc/os-release
+  multi-os:
+    runs-on: [ubuntu-latest, macos-latest, ubuntu-20.04]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v5
+        with: 
+          python-version: 3.9
+      - name: uname
+        run: |
+            uname -a
+      - name: Check Python version
+        run: |
+            python --version
