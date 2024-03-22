@@ -14,7 +14,11 @@ jobs:
   #     run: |
   #       cat /etc/os-release
   multi-os:
-    runs-on: [ubuntu-latest, macos-latest]
+    name: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, ubuntu-20.04]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python 3.9
