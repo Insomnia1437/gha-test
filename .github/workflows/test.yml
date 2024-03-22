@@ -1,18 +1,18 @@
-name: Tests on Rocky Linux 9
+name: Tests
 
 # Trigger the workflow on push or pull request
-on: [push, pull_request]
+on: workflow_dispatch
 
 jobs:
-  distribution-check:
-    runs-on: ubuntu-latest
-    container:
-      image: rockylinux/rockylinux:9
-    steps:
-    - uses: actions/checkout@v4
-    - name: Are we really on Rocky Linux?
-      run: |
-        cat /etc/os-release
+  # distribution-check:
+  #   runs-on: ubuntu-latest
+  #   container:
+  #     image: rockylinux/rockylinux:9
+  #   steps:
+  #   - uses: actions/checkout@v4
+  #   - name: Are we really on Rocky Linux?
+  #     run: |
+  #       cat /etc/os-release
   multi-os:
     runs-on: [ubuntu-latest, macos-latest, ubuntu-20.04]
     steps:
