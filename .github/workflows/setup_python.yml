@@ -1,0 +1,32 @@
+name: Setup python Env
+
+# Trigger the workflow on push or pull request
+on: workflow_dispatch
+
+jobs:
+  # distribution-check:
+  #   runs-on: ubuntu-latest
+  #   container:
+  #     image: rockylinux/rockylinux:9
+  #   steps:
+  #   - uses: actions/checkout@v4
+  #   - name: Are we really on Rocky Linux?
+  #     run: |
+  #       cat /etc/os-release
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v5
+        with: 
+          python-version: 3.9
+      - name: "pip3 install"
+        run: |
+          pip3 install --user -r requirements.txt
+      - name: Check Python version
+        run: |
+          python --version
+      - name: Check python modules
+        run: |
+          pip3 list
