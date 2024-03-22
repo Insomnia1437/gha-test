@@ -1,3 +1,4 @@
+name: Select os
 on:
   workflow_dispatch:
     inputs:
