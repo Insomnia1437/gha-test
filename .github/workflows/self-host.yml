@@ -1,4 +1,4 @@
-name: Setup python Env
+name: Self-hosted
 
 # Trigger the workflow on push or pull request
 on: workflow_dispatch
